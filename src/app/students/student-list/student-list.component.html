@@ -1,0 +1,16 @@
+<h2>Student List</h2>
+
+<!-- Loading message if no students are available -->
+<div *ngIf="!students || students.length === 0">
+  <p>Loading students...</p>
+</div>
+
+<!-- Display the list of students -->
+<ul *ngIf="students && students.length > 0">
+  <li *ngFor="let student of students">
+    <h3>{{ student.name }}</h3>
+    <p>Email: {{ student.email }}</p>
+    <p>Course: {{ student.course.title }}</p> <!-- Assuming a course object -->
+    <p>Enrolled Since: {{ student.enrollmentDate | date:'shortDate' }}</p>
+  </li>
+</ul>

@@ -1,0 +1,13 @@
+<h2>Teacher List</h2>
+
+<div *ngIf="teachers.length === 0">
+  <p>Loading teachers...</p>
+</div>
+
+<ul *ngIf="teachers.length > 0">
+  <li *ngFor="let teacher of teachers">
+    <h3>{{ teacher.name }}</h3>
+    <p>Email: {{ teacher.email }}</p>
+    <p>Specialization: {{ teacher.specialization }}</p>
+  </li>
+</ul>
