@@ -1,1 +1,11 @@
-<p>staff-list works!</p>
+<h2>Staff List</h2>
+
+<div *ngIf="!staff || staff.length === 0">
+  <p>Loading staff...</p>
+</div>
+
+<ul *ngIf="staff && staff.length > 0">
+  <li *ngFor="let member of staff">
+    {{ member.name }} ({{ member.position }})
+  </li>
+</ul>

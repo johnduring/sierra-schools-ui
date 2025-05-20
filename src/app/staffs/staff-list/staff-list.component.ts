@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StaffService } from '../../staffs/staff.service'; // Assuming a staff service exists
+import { StaffService } from '../staff.service'; // Assuming a staff service exists
 
 @Component({
   selector: 'app-staff-list',
@@ -13,7 +13,7 @@ export class StaffListComponent implements OnInit {
 
   ngOnInit(): void {
     // Fetch the staff data from the service
-    this.staffService.getStaff().subscribe((data: any[]) => {
+    this.staffService.getStaffs().subscribe((data) => {
       this.staff = data;
     });
   }

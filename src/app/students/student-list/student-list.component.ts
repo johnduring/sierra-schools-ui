@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from '../student.service'; // Assuming a student service exists
+import { StudentService } from '../student.service';
+import { Student } from '../../models/student';
 
 @Component({
   selector: 'app-student-list',
@@ -7,14 +8,15 @@ import { StudentService } from '../student.service'; // Assuming a student servi
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
-  students: any[] = []; // List of students
+  students: Student[] = [];
 
-  constructor(private studentService: StudentService) { }
+  constructor(private studentService: StudentService) {}
 
   ngOnInit(): void {
-    // Fetch the students from the service
-    this.studentService.getStudents().subscribe((data: any[]) => {
-      this.students = data;
-    });
+    this.fetchStudents();
+  }
+
+  fetchStudents(): void {
+    this.studentService.getAllStudents();
   }
 }

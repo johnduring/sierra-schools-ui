@@ -11,7 +11,7 @@ import { UserListComponent } from './users/user-list/user-list.component';
 import { LoginComponent } from './auth/login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/students', pathMatch: 'full' }, // Default route
+
   { path: 'students', component: StudentListComponent },
   { path: 'teachers', component: TeacherListComponent },
   { path: 'courses', component: CourseListComponent },

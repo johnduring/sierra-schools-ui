@@ -1,12 +1,34 @@
-<nav class="menu">
-  <a
-    *ngFor="let item of menuItems"
-    [routerLink]="item.path"
-    routerLinkActive="active-link"
-    [routerLinkActiveOptions]="{ exact: true }"
-  >
-    {{ item.label }}
-  </a>
-</nav>
+<!-- Top Navbar -->
+<header class="bg-blue-700 text-white p-4 shadow-md">
+  <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-xl font-bold">School Management System</h1>
+    <nav>
+      <a routerLink="/dashboard" routerLinkActive="font-semibold" class="mx-2">Dashboard</a>
+      <a routerLink="/students" routerLinkActive="font-semibold" class="mx-2">Students</a>
+      <a routerLink="/teachers" routerLinkActive="font-semibold" class="mx-2">Teachers</a>
+      <a routerLink="/classes" routerLinkActive="font-semibold" class="mx-2">Classes</a>
+      <a routerLink="/profile" routerLinkActive="font-semibold" class="mx-2">Profile</a>
+      <a routerLink="/login" class="mx-2">Logout</a>
+    </nav>
+  </div>
+</header>
 
-<router-outlet></router-outlet>
+<!-- Main Content -->
+<main class="container mx-auto p-4">
+  <section class="mb-4">
+    <h2 class="text-2xl font-semibold">School Management Dashboard</h2>
+    <!-- Optional: breadcrumb navigation -->
+    <nav class="text-sm text-gray-600">
+      <a routerLink="/dashboard" class="hover:underline">Home</a> /
+      <span>Students</span>
+    </nav>
+  </section>
+
+  <router-outlet></router-outlet>
+</main>
+
+
+<!-- Optional Footer -->
+<footer class="bg-gray-100 text-center text-sm text-gray-600 p-4 mt-10">
+  &copy; {{ currentYear }} School Management System
+</footer>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Student } from '../models/student';
 
 @Injectable({ providedIn: 'root' })
 export class StudentService {
@@ -8,8 +9,8 @@ export class StudentService {
 
   constructor(private http: HttpClient) {}
 
-  getStudents(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  getAllStudents(): Observable<any[]> {
+    return this.http.get<Student[]>(this.apiUrl);
   }
 
   getStudent(id: number): Observable<any> {
