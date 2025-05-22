@@ -7,25 +7,25 @@ import { Student } from '../models/student';
 export class StudentService {
   private apiUrl = 'http://localhost:8080/api/students';
 
-  constructor(private http: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   getAllStudents(): Observable<any[]> {
-    return this.http.get<Student[]>(this.apiUrl);
+    return this.httpClient.get<Student[]>(this.apiUrl);
   }
 
   getStudent(id: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${id}`);
+    return this.httpClient.get(`${this.apiUrl}/${id}`);
   }
 
   createStudent(student: any): Observable<any> {
-    return this.http.post(this.apiUrl, student);
+    return this.httpClient.post(this.apiUrl, student);
   }
 
   updateStudent(id: number, student: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, student);
+    return this.httpClient.put(`${this.apiUrl}/${id}`, student);
   }
 
   deleteStudent(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.httpClient.delete(`${this.apiUrl}/${id}`);
   }
 }

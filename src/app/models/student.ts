@@ -3,6 +3,6 @@
 export interface Student {
   id: number;
   name: string;
-  className: string;
   email: string;
+  image: string
 }
